@@ -301,11 +301,11 @@ export const createAction = (type, data) => ({
 });
 
 export const loading = (value) => {
-  return createAction('SET_LOADING', value);
+  return createAction(ACTION.SET_LOADING, value);
 };
 
 export const error = (value) => {
-  return createAction('SET_ERROR', value);
+  return createAction(ACTION.SET_ERROR, value);
 };
 
 export const setPackages = (data) => {

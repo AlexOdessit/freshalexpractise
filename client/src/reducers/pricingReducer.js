@@ -8,7 +8,7 @@ const initialState = {
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case ACTIONS.SET_PACKAGES:
+    case ACTIONS.SET_PRICING_PACKAGES:
       return {
         ...state,
         packages: action.payload,
