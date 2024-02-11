@@ -1,24 +1,32 @@
 import React from 'react';
 import { useReducer, useEffect } from 'react';
 import { initialState, reducer } from '../../reducers/pricingReducer';
-import { loading, error, setPackages } from '../../actions/actionCreator';
+import { setLoading, setError, setPackages } from '../../actions/actionCreator';
 
 const PriceList = () => {
-  const [{ packages, loading, error }, dispatch] = useReducer(
-    initialState,
-    reducer
+  const [{ loading, error, packages }, dispatch] = useReducer(
+    reducer,
+    initialState
   );
 
-  useEffect({
+  useEffect(() => {
     const fetchData = async () => {
-      dispatch(loading(true))
-      const response  = await fetch('../public/pricing.json')
-      console.log(response.json)
-    }
-    
-   fetchData();   
-},[])
-  return <div></div>;
+      dispatch(setLoading(true));
+
+      try {
+        const response = await fetch('../public/pricing.json');
+        const data = await response.json();
+        console.log(data);
+        dispatch(setPackages(data));
+      } catch (err) {
+        dispatch(setError('Failed to fetch packages'));
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  return <div>Loading...</div>;
 };
 
 export default PriceList;
