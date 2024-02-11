@@ -308,6 +308,6 @@ export const error = (value) => {
   return createAction('SET_ERROR', value);
 };
 
-export const packages = (data) => {
+export const setPackages = (data) => {
   return createAction('SET_PACKAGES', data);
 };
