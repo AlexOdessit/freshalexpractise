@@ -8,6 +8,13 @@ const initialState = {
 
 const reducer = (state, action) => {
   switch (action.type) {
+    case ACTIONS.SET_PACKAGES:
+      return {
+        ...state,
+        packages: action.payload,
+        loading: true,
+        error: false,
+      };
     case ACTIONS.SET_LOADING:
       return { ...state, loading: true, error: null };
     case ACTIONS.SET_ERROR:
