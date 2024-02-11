@@ -14,9 +14,8 @@ const PriceList = () => {
       dispatch(setLoading(true));
 
       try {
-        const response = await fetch('../public/pricing.json');
+        const response = await fetch('/pricing.json');
         const data = await response.json();
-        console.log(data);
         dispatch(setPackages(data));
       } catch (err) {
         dispatch(setError('Failed to fetch packages'));
