@@ -1,0 +1,64 @@
+{
+  "packages": [
+    {
+      "name": "Bronze",
+      "description": "Branding on a budget",
+      "price": "US$299",
+      "content": [
+        "Prize to Winner - $135 (Included)",
+        ["Validation Services & Upgrades ($39 value)", ["Matching .com URL"]],
+        "Expected 300+ Entries"
+      ]
+    },
+    {
+      "name": "Gold",
+      "description": "Increase participation and basic brand validation",
+      "price": "US$449",
+      "content": [
+        "Prize to Winner - $200 (Included)",
+        [
+          "Validation Services & Upgrades ($305 value)",
+          [
+            "Matching .com URL",
+            "Instant Trademark Check (One Database)",
+            "NDA and More Privacy",
+            "Project Promotion (Basic)",
+            "Comprehensive Trademark Research"
+          ]
+        ],
+        "Expected 600+ Entries"
+      ]
+    },
+    {
+      "name": "Platinum",
+      "description": "Work with top-level creatives, plus agency-style brand validation",
+      "price": "US$749",
+      "content": [
+        "Prize to Winner - $300 (Included)",
+        [
+          "Validation Services & Upgrades ($79 value)",
+          [
+            "Audience Testing (Up to 6 Names)",
+            "Comprehensive Trademark Research (3 Names)",
+            "Linguistics Analysis (3 Names)",
+            "Tier A Creatives",
+            "Matching .com URL",
+            "Instant Trademark Check (4 Databases)",
+            "NDA and More Privacy",
+            "Enhanced Project Promotion"
+          ]
+        ],
+        "Team Collaboration Tools",
+        "Expected 1000+ Entries"
+      ]
+    },
+    {
+      "name": "Managed",
+      "description": "A full agency experience without the agency price tag",
+      "price": "US$1499",
+      "content": [
+        "Receive optimum results from your Platinum Contest Package and working one-on-one with an experienced Squadhelp Branding Consultant. With significantly more validation services, professional brief creation, and daily management of your contest by your Branding Expert, you'll receive an enhanced branding experience to closeout your branding project. Expected 1000+ Entries"
+      ]
+    }
+  ]
+}
