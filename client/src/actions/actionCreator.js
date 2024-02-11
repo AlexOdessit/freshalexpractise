@@ -295,19 +295,17 @@ export const changeModalShow = (data) => ({
 });
 
 //Pricing actions
-export const createAction = (type, data) => ({
-  type,
-  data,
+export const setLoading = (value) => ({
+  type: ACTION.SET_PRICING_LOADING,
+  data: value,
 });
 
-export const loading = (value) => {
-  return createAction(ACTION.SET_LOADING, value);
-};
+export const setError = (value) => ({
+  type: ACTION.SET_PRICING_ERROR,
+  data: value,
+});
 
-export const error = (value) => {
-  return createAction(ACTION.SET_ERROR, value);
-};
-
-export const setPackages = (data) => {
-  return createAction('SET_PACKAGES', data);
-};
+export const setPackages = (data) => ({
+  type: ACTION.SET_PRICING_PACKAGES,
+  data,
+});
