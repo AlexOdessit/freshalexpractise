@@ -1,4 +1,4 @@
-import { ACTION } from './actions';
+import { ACTIONS } from './actionTypes';
 
 const initialState = {
   packages: [],
@@ -8,16 +8,9 @@ const initialState = {
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case ACTION.SET_PACKAGES:
-      return {
-        ...state,
-        packages: action.payload,
-        loading: false,
-        error: null,
-      };
-    case ACTION.SET_LOADING:
+    case ACTIONS.SET_LOADING:
       return { ...state, loading: true, error: null };
-    case ACTION.SET_ERROR:
+    case ACTIONS.SET_ERROR:
       return { ...state, loading: false, error: action.payload };
     default:
       return state;
