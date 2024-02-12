@@ -1,3 +1,31 @@
 .container {
-  color: #000;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.color {
+  color: e0b48d;
+}
+
+.box {
+  border: 10px solid #eee;
+  padding: 16px;
+  margin-bottom: 15px;
+  display: inline-block;
+  width: 100%;
+  min-height: 215px;
+  background-color: #fff;
+
+  .title {
+    font-size: 33px;
+  }
+}
+
+.selectBox {
+  list-style-type: none;
+}
+
+.selectBox a {
+  text-decoration: none;
 }
