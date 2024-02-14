@@ -1,0 +1,47 @@
+.container {
+  padding-top: 40px;
+  padding-bottom: 10%;
+  width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wrap {
+  background: #28d2d0;
+  position: relative;
+  .select {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    min-height: 55px;
+    padding: 0 15px;
+    cursor: pointer;
+  }
+
+  & .btn {
+    background: 0;
+    font-size: 38px;
+    text-align: left;
+    min-width: 200px;
+    font-weight: 700;
+    padding: 3px 15px;
+    border: 0;
+    color: #fff;
+
+    & .selectIcon {
+      position: absolute;
+      right: 5px;
+    }
+  }
+}
+
+.title {
+  font-size: 38px;
+  font-weight: 700;
+  color: #555;
+}
