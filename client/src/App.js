@@ -77,6 +77,7 @@ class App extends Component {
               title: 'LOGO',
             })}
           />
+
           <Route path='/pricing' component={PricingPage} />
           <Route exact path='/dashboard' component={PrivateHoc(Dashboard)} />
 

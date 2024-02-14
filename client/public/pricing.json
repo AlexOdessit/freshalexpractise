@@ -4,6 +4,7 @@
       "name": "Bronze",
       "description": "Branding on a budget",
       "price": "US$299",
+      "color": "#E0B48D",
       "content": [
         "Prize to Winner - $135 (Included)",
         ["Validation Services & Upgrades ($39 value)", ["Matching .com URL"]],
@@ -14,6 +15,7 @@
       "name": "Gold",
       "description": "Increase participation and basic brand validation",
       "price": "US$449",
+      "color": "#E8B954",
       "content": [
         "Prize to Winner - $200 (Included)",
         [
@@ -26,17 +28,19 @@
             "Comprehensive Trademark Research"
           ]
         ],
-        "Expected 600+ Entries"
+        "Expected 600+ Entries",
+        "Partial Refund Option"
       ]
     },
     {
       "name": "Platinum",
       "description": "Work with top-level creatives, plus agency-style brand validation",
       "price": "US$749",
+      "color": "#555555",
       "content": [
         "Prize to Winner - $300 (Included)",
         [
-          "Validation Services & Upgrades ($79 value)",
+          "Validation Services & Upgrades ($979 value)",
           [
             "Audience Testing (Up to 6 Names)",
             "Comprehensive Trademark Research (3 Names)",
@@ -45,19 +49,22 @@
             "Matching .com URL",
             "Instant Trademark Check (4 Databases)",
             "NDA and More Privacy",
-            "Enhanced Project Promotion"
+            "Enhanced Project Promotion",
+            "Team Collaboration Tools"
           ]
         ],
-        "Team Collaboration Tools",
-        "Expected 1000+ Entries"
+
+        "Expected 1000+ Entries",
+        "Partial Refund Option"
       ]
     },
     {
       "name": "Managed",
       "description": "A full agency experience without the agency price tag",
       "price": "US$1499",
+      "color": "#28D2D0",
       "content": [
-        "Receive optimum results from your Platinum Contest Package and working one-on-one with an experienced Squadhelp Branding Consultant. With significantly more validation services, professional brief creation, and daily management of your contest by your Branding Expert, you'll receive an enhanced branding experience to closeout your branding project. Expected 1000+ Entries"
+        "Receive optimum results from your Platinum Contest by launching a Managed Contest Package and working one-on-one with an experienced Squadhelp Branding Consultant.With significantly more validation services, professional brief creation, and daily management of your contest by your Branding Expert, you'll receive an enhanced branding experience to closeout your branding project."
       ]
     }
   ]

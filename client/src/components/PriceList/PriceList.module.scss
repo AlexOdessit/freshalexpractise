@@ -1,31 +1,71 @@
 .container {
   display: grid;
-  gap: 20px;
   grid-template-columns: repeat(4, 1fr);
-}
+  grid-gap: 25px;
+  width: 1170px;
+  margin: 0 auto;
 
-.color {
-  color: e0b48d;
+  .pkg {
+    width: 100%;
+
+    .desc {
+      color: #666;
+      font-size: 16px;
+      font-weight: 500;
+      min-height: 75px;
+      line-height: 1.5em;
+    }
+
+    .price {
+      text-align: right;
+      width: 100%;
+      font-size: 28px;
+      font-weight: 600;
+    }
+  }
 }
 
 .box {
   border: 10px solid #eee;
   padding: 16px;
   margin-bottom: 15px;
-  display: inline-block;
-  width: 100%;
   min-height: 215px;
-  background-color: #fff;
 
   .title {
     font-size: 33px;
+    margin-bottom: 10px;
   }
 }
 
-.selectBox {
-  list-style-type: none;
+.content {
+  .list {
+    font-size: 15px;
+    font-weight: 500;
+    padding: 13px 0;
+    border-bottom: 2px solid #ddd;
+
+    &:last-child {
+      border-bottom: 0 !important;
+    }
+  }
 }
 
-.selectBox a {
+.subList {
+  border-bottom: none !important;
+}
+
+.paragraph {
+  line-height: 1.5em;
+  margin-bottom: 10px;
+}
+
+.selectLink {
   text-decoration: none;
+  padding: 15px 10px;
+  display: block;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: 700;
+  cursor: pointer;
 }

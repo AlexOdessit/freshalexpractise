@@ -1,59 +1,84 @@
-import React from 'react';
-import { useReducer, useEffect } from 'react';
+import React, { useReducer, useEffect } from 'react';
 import { v4 as pkgID } from 'uuid';
 import { initialState, reducer } from '../../reducers/pricingReducer';
 import { setLoading, setError, setPackages } from '../../actions/actionCreator';
-import classNames from 'classnames';
+import { Link } from 'react-router-dom';
 import styles from './PriceList.module.scss';
+
+const fetchData = async (dispatch) => {
+  dispatch(setLoading(true));
+  try {
+    const response = await fetch('/pricing.json');
+    const data = await response.json();
+    dispatch(setPackages(data.packages));
+  } catch (err) {
+    dispatch(setError('Failed to load packages'));
+  } finally {
+    dispatch(setLoading(false));
+  }
+};
+
+const renderContent = (content) =>
+  content.map((item) =>
+    Array.isArray(item) ? (
+      <ul key={pkgID()}>{renderContent(item)}</ul>
+    ) : (
+      <li className={styles.list} key={pkgID()}>
+        {item}
+      </li>
+    )
+  );
+
+const renderParagraph = (content) => {
+  const paragraphs = content[0].split('.');
+  const nonempty = paragraphs.filter((paragraph) => paragraph.trim() !== '');
+  return nonempty.map((paragraph) => (
+    <p key={pkgID()} className={styles.paragraph}>
+      {paragraph}
+    </p>
+  ));
+};
 
 const PriceList = () => {
   const [{ packages }, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    const fetchData = async () => {
-      dispatch(setLoading(true));
-      try {
-        const response = await fetch('/pricing.json');
-        const data = await response.json();
-        dispatch(setPackages(data.packages));
-        dispatch(setLoading(false));
-      } catch (err) {
-        dispatch(setError('Failed to fetch packages'));
-      }
-    };
-
-    fetchData();
+    fetchData(dispatch);
   }, []);
 
   return (
     <div className={styles.container}>
-      {packages.length > 0 &&
+      {packages.length > 0 ? (
         packages.map((pkg) => (
           <article key={pkgID()} className={styles.pkg}>
-            <h2>{pkg.name}</h2>
-            <p>{pkg.description}</p>
-            <h3>{pkg.price}</h3>
-            <ul>
-              {pkg.content.map((item) => (
-                <li key={pkgID()} className=''>
-                  {Array.isArray(item) ? (
-                    <ul>
-                      {item.map((subItem) => (
-                        <li className={styles.subItem} key={pkgID()}>
-                          {subItem}
-                        </li>
-                      ))}
-                    </ul>
-                  ) : (
-                    item
-                  )}
-                </li>
-              ))}
-            </ul>
-            <button>Start</button>
+            <div className={styles.box} style={{ borderColor: pkg.color }}>
+              <h2 className={styles.title}>{pkg.name} </h2>
+              <p className={styles.desc}>{pkg.description}</p>
+              <h3 className={styles.price} style={{ color: pkg.color }}>
+                {pkg.price}
+              </h3>
+            </div>
+
+            {pkg.name === 'Managed' ? (
+              <ul className={styles.content}>
+                <li className={styles.list}>{renderParagraph(pkg.content)}</li>
+              </ul>
+            ) : (
+              <ul className={styles.content}>{renderContent(pkg.content)}</ul>
+            )}
+
+            <Link
+              style={{ background: pkg.color, border: pkg.color }}
+              className={styles.selectLink}
+              to='#'
+            >
+              Start
+            </Link>
           </article>
-        ))}
-      {packages.length === 0 && <p>No packages available</p>}
+        ))
+      ) : (
+        <p>No packages available</p>
+      )}
     </div>
   );
 };
