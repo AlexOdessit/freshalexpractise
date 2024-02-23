@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 
 const PricingForm = () => {
   const [selectValue, setSelectedValue] = useState('');
-
   const handleSelectChange = ({ target: { value } }) => {
     setSelectedValue(value);
   };
